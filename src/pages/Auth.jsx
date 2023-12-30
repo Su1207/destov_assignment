@@ -67,8 +67,8 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex items-center w-full justify-center">
-      <div className="border w-80 p-5 flex flex-col items-center justify-center rounded-sm">
+    <div className="flex items-center w-full justify-center h-full">
+      <div className="border border-black w-80 p-5 flex flex-col items-center justify-center rounded-sm shadow-md bg-white">
         <div>
           {signUp ? (
             <h1 className="text-3xl mb-4 font-semibold text-gray-500">
@@ -85,7 +85,7 @@ const Auth = () => {
             <div className="flex flex-col">
               <input
                 type="text"
-                className="p-2 mb-1 border rounded-sm max-w-full"
+                className="p-2 mb-1 border rounded-sm max-w-full text-sm"
                 placeholder="First Name"
                 name="firstName"
                 value={firstName}
@@ -112,7 +112,7 @@ const Auth = () => {
           />
           <input
             type="password"
-            className="p-2 mb-1 border rounded-sm text-sm"
+            className="p-2 mb-1 border rounded-sm text-sm w-full"
             placeholder="Password"
             name="password"
             value={password}
@@ -122,7 +122,7 @@ const Auth = () => {
           {signUp && (
             <input
               type="password"
-              className="p-2 mb-1 border rounded-sm min-w-fit"
+              className="p-2 mb-1 border rounded-sm w-full text-sm"
               placeholder="Confirm Password"
               name="confirmPassword"
               value={confirmPassword}
@@ -132,15 +132,15 @@ const Auth = () => {
 
           <button
             type="submit"
-            className="border rounded-md py-1 px-2 mt-2 bg-blue-500"
+            className="border rounded-md py-1 px-4 mt-2 bg-blue-500"
           >
             {!signUp ? "Log In" : "Sign Up"}
           </button>
         </form>
         <div>
           {!signUp ? (
-            <div className="para-btn">
-              <p>
+            <div className="">
+              <p className="text-xs">
                 Don't have an account ?&nbsp;
                 <span
                   className="link-danger"
@@ -157,7 +157,7 @@ const Auth = () => {
             </div>
           ) : (
             <div className="para-btn">
-              <p>
+              <p className="text-xs">
                 Already have an account ?&nbsp;
                 <span
                   style={{
