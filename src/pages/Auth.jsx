@@ -67,7 +67,7 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex items-center w-full justify-center h-full">
+    <div className="flex items-center w-full justify-center h-screen">
       <div className="border border-black w-80 p-5 flex flex-col items-center justify-center rounded-sm shadow-md bg-white">
         <div>
           {signUp ? (
@@ -80,12 +80,15 @@ const Auth = () => {
             </h1>
           )}
         </div>
-        <form className="flex flex-col items-center" onSubmit={handleAuth}>
+        <form
+          className="flex flex-col items-center gap-2 min-w-full"
+          onSubmit={handleAuth}
+        >
           {signUp && (
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2 w-full">
               <input
                 type="text"
-                className="p-2 mb-1 border rounded-sm max-w-full text-sm"
+                className="p-2 border rounded-sm w-full text-sm focus:outline-none"
                 placeholder="First Name"
                 name="firstName"
                 value={firstName}
@@ -93,7 +96,7 @@ const Auth = () => {
               />
               <input
                 type="text"
-                className="p-2 mb-1 border rounded-sm min-w-fit"
+                className="p-2 border rounded-sm w-full focus:outline-none text-sm"
                 placeholder="Last Name"
                 name="lastName"
                 value={lastName}
@@ -104,7 +107,7 @@ const Auth = () => {
 
           <input
             type="email"
-            className="p-2 mb-1 border rounded-sm w-full text-sm"
+            className="p-2 border rounded-sm w-full text-sm focus:outline-none"
             placeholder="Email"
             name="email"
             value={email}
@@ -112,7 +115,7 @@ const Auth = () => {
           />
           <input
             type="password"
-            className="p-2 mb-1 border rounded-sm text-sm w-full"
+            className="p-2 mb-1 border rounded-sm text-sm w-full focus:outline-none"
             placeholder="Password"
             name="password"
             value={password}
@@ -122,7 +125,7 @@ const Auth = () => {
           {signUp && (
             <input
               type="password"
-              className="p-2 mb-1 border rounded-sm w-full text-sm"
+              className="p-2 mb-1 border rounded-sm w-full text-sm focus:outline-none"
               placeholder="Confirm Password"
               name="confirmPassword"
               value={confirmPassword}
@@ -132,7 +135,7 @@ const Auth = () => {
 
           <button
             type="submit"
-            className="border rounded-md py-1 px-4 mt-2 bg-blue-500"
+            className="border rounded-md py-1 px-4 my-2 bg-blue-500 font-medium"
           >
             {!signUp ? "Log In" : "Sign Up"}
           </button>
