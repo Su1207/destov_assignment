@@ -98,7 +98,7 @@ const CreateUser = ({ user }) => {
             </h1>
             <form
               onSubmit={handleSubmit}
-              className="rounded-sm flex flex-col mb-4 sm:mb-0 sm:block w-full"
+              className="rounded-sm flex flex-col sm:mb-0 sm:block w-full"
             >
               <div>
                 <label className="text-xs md:text-sm font-medium mb-2 text-gray-500">
@@ -167,7 +167,7 @@ const CreateUser = ({ user }) => {
               </div>
               <button
                 type="submit"
-                className="bg-gray-800 py-1 px-5 mt-2 text-white rounded-md hover:bg-black"
+                className="bg-gray-800 py-1 px-5 mt-2 text-white rounded-md hover:bg-black mb-4 sm:pb-0"
               >
                 {id ? "Update" : "Submit"}
               </button>
