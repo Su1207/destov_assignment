@@ -92,7 +92,7 @@ const CreateUser = ({ user }) => {
           <img src={User} alt="User" className="" />
         </div>
         <div className="sm:flex-1 bg-white min-h-full sm:h-screen">
-          <div className="flex flex-col gap-5 h-full px-4 py-8 border-l">
+          <div className="flex flex-col gap-5 h-full px-4 md:py-8 border-l">
             <h1 className="text-3xl font-bold">
               {id ? "Update User Profile" : "Create User Profile"}
             </h1>
