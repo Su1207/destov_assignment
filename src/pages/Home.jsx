@@ -80,7 +80,7 @@ const Home = ({ user, handleLogout }) => {
           Select Date
         </label>
         <input
-          className="px-2 rounded-md text-sm font-semibold"
+          className="px-2 rounded-md text-sm font-semibold focus:outline-none"
           type="date"
           value={selectedDate ? selectedDate.toISOString().split("T")[0] : ""}
           onChange={(e) => setSelectedDate(new Date(e.target.value))}
@@ -92,7 +92,7 @@ const Home = ({ user, handleLogout }) => {
           Select Gender
         </label>
         <select
-          className="rounded-md px-2 py-1 text-sm font-semibold"
+          className="rounded-md px-2 py-1 text-sm font-semibold focus:outline-none"
           value={orderOption}
           onChange={(e) => setOrderOption(e.target.value)}
         >
