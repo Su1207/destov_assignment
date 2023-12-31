@@ -71,8 +71,8 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex items-center w-full justify-center min-h-screen bg-slate-100">
-      <div className="w-full rounded-sm shadow-lg bg-white xl:flex lg:flex md:flex sm:flex sm:gap-8 sm:pr-5 justify-center items-center gap-4">
+    <div className="flex items-center w-full sm:justify-center min-h-screen bg-slate-100">
+      <div className="w-full  rounded-sm shadow-lg bg-white xl:flex lg:flex md:flex sm:flex sm:gap-8 sm:pr-5 justify-center items-center gap-4">
         <div className="flex-1 mb-4">
           <img src={Login} alt="" className="sm:h-full h-25 w-full" />
         </div>
@@ -84,7 +84,7 @@ const Auth = () => {
               <h1 className="text-3xl mb-8 font-bold">Log In</h1>
             )}
             <form
-              className="flex flex-col items-center gap-1 min-w-full"
+              className="flex flex-col items-center gap-1 min-w-full px-5 sm:px-0"
               onSubmit={handleAuth}
             >
               {signUp && (
