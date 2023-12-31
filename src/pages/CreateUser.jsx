@@ -88,8 +88,8 @@ const CreateUser = ({ user }) => {
   return (
     <div>
       <div className="font-sans sm:flex md:items-center sm:h-screen md:overflow-hidden">
-        <div className="sm:flex-1 object-cover object-center">
-          <img src={User} alt="User" className="" />
+        <div className="sm:flex-1 ">
+          <img src={User} alt="User" className="object-cover object-center" />
         </div>
         <div className="sm:flex-1 bg-white min-h-full sm:h-screen">
           <div className="flex flex-col gap-2 h-full px-4 pt-8 border-l">
