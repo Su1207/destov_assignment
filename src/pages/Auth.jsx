@@ -71,13 +71,13 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex items-center w-full justify-center h-screen bg-slate-100">
-      <div className="max-w-full pr-5 rounded-sm shadow-lg bg-white flex justify-center items-center gap-8">
+    <div className="flex items-center w-full justify-center bg-slate-100 py-4">
+      <div className="max-w-full rounded-sm shadow-lg bg-white xl:flex lg:flex md:flex sm:flex sm:gap-8 sm:pr-5 justify-center items-center gap-4">
         <div className="flex-1">
-          <img src={Login} alt="" className="h-full" />
+          <img src={Login} alt="" className="sm:h-full h-25 w-full" />
         </div>
         <div className="flex-1">
-          <div className="flex flex-col justify-center items-center">
+          <div className="sm:flex  flex flex-col justify-center items-center mx-2">
             {signUp ? (
               <h1 className="text-3xl mb-8 font-bold">Sign Up</h1>
             ) : (
