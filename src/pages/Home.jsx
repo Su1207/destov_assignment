@@ -83,7 +83,9 @@ const Home = ({ user, handleLogout }) => {
           className="px-2 rounded-md text-sm font-semibold focus:outline-none"
           type="date"
           value={selectedDate ? selectedDate.toISOString().split("T")[0] : ""}
-          onChange={(e) => setSelectedDate(new Date(e.target.value))}
+          onChange={(e) =>
+            setSelectedDate(e.target.value ? new Date(e.target.value) : null)
+          }
         />
       </div>
 
