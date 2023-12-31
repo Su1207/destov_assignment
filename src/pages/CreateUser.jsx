@@ -87,72 +87,75 @@ const CreateUser = ({ user }) => {
 
   return (
     <div>
-      <div className="font-sans md:flex md:items-center h-screen overflow-hidden">
-        <div className="sm:flex-1">
+      <div className="font-sans sm:flex md:items-center sm:h-screen md:overflow-hidden">
+        <div className="sm:flex-1 object-cover object-center">
           <img src={User} alt="User" className="" />
         </div>
         <div className="sm:flex-1 bg-white min-h-full sm:h-screen">
-          <div className="flex flex-col gap-5 h-full px-4 pt-8 border-l">
-            <h1 className="text-3xl font-bold">
+          <div className="flex flex-col gap-2 h-full px-4 pt-8 border-l">
+            <h1 className="text-xl md:text-3xl font-bold">
               {id ? "Update User Profile" : "Create User Profile"}
             </h1>
-            <form onSubmit={handleSubmit} className="rounded-sm">
+            <form
+              onSubmit={handleSubmit}
+              className="rounded-sm flex flex-col mb-4 sm:mb-0 sm:block w-full"
+            >
               <div>
-                <label className="text-sm font-medium mb-2 text-gray-500">
+                <label className="text-xs md:text-sm font-medium mb-2 text-gray-500">
                   User Name
                 </label>
                 <input
                   type="text"
                   name="userName"
                   value={userName}
-                  className="p-2 mb-2 border rounded-md w-full text-sm focus:outline-none"
+                  className="p-1 mb-1 md:p-2 md:mb-2 border rounded-md w-full text-sm focus:outline-none"
                   onChange={handleChange}
                 />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 text-gray-500">
+                <label className="text-xs md:text-sm font-medium mb-2 text-gray-500">
                   Email
                 </label>
                 <input
                   type="email"
                   name="userEmail"
                   value={userEmail}
-                  className="p-2 mb-2 border rounded-md w-full text-sm focus:outline-none"
+                  className="p-1 mb-1 md:p-2 md:mb-2 border rounded-md w-full text-sm focus:outline-none"
                   onChange={handleChange}
                 />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 text-gray-500">
+                <label className="text-xs md:text-sm font-medium mb-2 text-gray-500">
                   Phone
                 </label>
                 <input
                   type="text"
                   name="number"
                   value={number}
-                  className="p-2 mb-2 border rounded-md w-full text-sm focus:outline-none"
+                  className="p-1 mb-1 md:p-2 md:mb-2 border rounded-md w-full text-sm focus:outline-none"
                   onChange={handleChange}
                 />
               </div>
               <div>
-                <label className="text-sm font-medium mb-2 text-gray-500">
+                <label className="text-xs md:text-sm font-medium mb-2 text-gray-500">
                   Designation
                 </label>
                 <input
                   type="text"
                   name="designation"
                   value={designation}
-                  className="p-2 mb-2 border rounded-md w-full text-sm focus:outline-none"
+                  className="p-1 mb-1 md:p-2 md:mb-2 border rounded-md w-full text-sm focus:outline-none"
                   onChange={handleChange}
                 />
               </div>
-              <div className="flex flex-col">
-                <label className="text-sm font-medium text-gray-500">
+              <div className="flex flex-col w-full">
+                <label className="text-xs md:text-sm font-medium text-gray-500">
                   Gender
                 </label>
                 <select
                   value={gender}
                   onChange={handleGender}
-                  className="border rounded-md p-2 mb-2 focus:outline-none"
+                  className="border rounded-md p-1 mb-1 md:p-2 md:mb-2 focus:outline-none w-full"
                 >
                   <option></option>
                   {genderCategory.map((option, index) => (
