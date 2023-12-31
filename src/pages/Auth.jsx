@@ -84,7 +84,7 @@ const Auth = () => {
               <h1 className="text-3xl mb-8 font-bold">Log In</h1>
             )}
             <form
-              className="flex flex-col items-center gap-2 min-w-full"
+              className="flex flex-col items-center gap-1 min-w-full"
               onSubmit={handleAuth}
             >
               {signUp && (
@@ -143,7 +143,7 @@ const Auth = () => {
                   <RiLockPasswordFill className="absolute text-gray-600 text-lg" />
                   <input
                     type="password"
-                    className="p-2 pl-8 mb-1 border-b rounded-sm w-full text-sm focus:outline-none"
+                    className="p-2 pl-8 border-b rounded-sm w-full text-sm focus:outline-none"
                     placeholder="Confirm Password"
                     name="confirmPassword"
                     value={confirmPassword}
@@ -152,6 +152,9 @@ const Auth = () => {
                 </div>
               )}
 
+              <div className="text-xs">
+                Password must contain at least 6 characters
+              </div>
               <button
                 type="submit"
                 className={
