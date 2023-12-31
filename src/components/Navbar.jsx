@@ -8,20 +8,20 @@ const Navbar = ({ user, handleLogout }) => {
     <div className="flex justify-between items-start">
       {userId ? (
         <div>
-          <h3 className="text-xl font-semibold flex items-center gap-2">
+          <h3 className="sm:text-xl text-lg font-semibold flex items-center gap-2">
             Welcome{" "}
-            <span className="text-2xl">
+            <span className="sm:text-2xl text-xl">
               <PiHandsPraying />
             </span>
           </h3>
-          <h1 className="text-center mb-2 text-3xl font-bold">
+          <h1 className="text-center mb-2 text-xl sm:text-3xl font-bold">
             {user?.displayName}
           </h1>
         </div>
       ) : (
         <h1 className="text-center mb-2"></h1>
       )}
-      <div className="flex gap-3 items-center justify-center">
+      <div className="flex sm:gap-3 gap-1 items-center justify-center">
         <Link
           to="/create"
           className=" px-3 py-2 rounded-md font-bold text-md hover:bg-black hover:text-white transition-all ease-in-out duration-300"
