@@ -71,9 +71,9 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex items-center w-full justify-center bg-slate-100 py-4">
-      <div className="max-w-full rounded-sm shadow-lg bg-white xl:flex lg:flex md:flex sm:flex sm:gap-8 sm:pr-5 justify-center items-center gap-4">
-        <div className="flex-1">
+    <div className="flex items-center w-full justify-center min-h-screen bg-slate-100">
+      <div className="w-full rounded-sm shadow-lg bg-white xl:flex lg:flex md:flex sm:flex sm:gap-8 sm:pr-5 justify-center items-center gap-4">
+        <div className="flex-1 mb-4">
           <img src={Login} alt="" className="sm:h-full h-25 w-full" />
         </div>
         <div className="flex-1">
@@ -168,7 +168,7 @@ const Auth = () => {
             </form>
             <div>
               {!signUp ? (
-                <div className="">
+                <div className="mb-4">
                   <p className="text-xs font-semibold text-gray-500">
                     Don't have an account ?&nbsp;
                     <span
@@ -180,7 +180,7 @@ const Auth = () => {
                   </p>
                 </div>
               ) : (
-                <div className="para-btn">
+                <div className="mb-4">
                   <p className="text-xs font-semibold text-gray-500">
                     Already have an account ?&nbsp;
                     <span
