@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PiHandsPraying } from "react-icons/pi";
 
 const Navbar = ({ user, handleLogout }) => {
   const userId = user?.uid;
+  const [orderOption, setOrderOption] = useState("none");
   return (
     <div className="flex justify-between items-start">
       {userId ? (

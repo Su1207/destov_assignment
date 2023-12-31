@@ -86,19 +86,19 @@ const CreateUser = ({ user }) => {
   };
 
   return (
-    <div>
-      <div className="font-sans sm:flex md:items-center sm:h-screen md:overflow-hidden">
+    <div className="">
+      <div className="font-sans sm:flex md:items-center min-h-screen md:overflow-hidden">
         <div className="sm:flex-1 ">
           <img src={User} alt="User" className="object-cover object-center" />
         </div>
-        <div className="sm:flex-1 bg-white min-h-full sm:h-screen">
+        <div className="sm:flex-1 bg-white sm:h-screen h-full">
           <div className="flex flex-col gap-2 h-full px-4 pt-8 border-l">
             <h1 className="text-xl md:text-3xl font-bold">
               {id ? "Update User Profile" : "Create User Profile"}
             </h1>
             <form
               onSubmit={handleSubmit}
-              className="rounded-sm flex flex-col sm:mb-0 sm:block w-full"
+              className="rounded-sm flex flex-col sm:block w-full"
             >
               <div>
                 <label className="text-xs md:text-sm font-medium mb-2 text-gray-500">

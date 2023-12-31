@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import profile from "../assets/author.jpg";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
@@ -15,6 +15,12 @@ const UserList = ({ user, users, handleDelete }) => {
 
     return timestampB - timestampA;
   });
+
+  //   const femaleUsers = sortedUsers?.filter((item) => item.gender === "Female");
+  //   console.log(femaleUsers);
+
+  //   const maleUsers = sortedUsers?.filter((item) => item.gender === "Male");
+  //   console.log(maleUsers);
 
   const navigate = useNavigate();
 
