@@ -92,12 +92,12 @@ const CreateUser = ({ user }) => {
           <img
             src={User}
             alt="User"
-            className="object-cover object-center h-screen w-full"
+            className="sm:h-screen w-full object-cover object-center"
           />
         </div>
         <div className="sm:flex-1 bg-white sm:h-screen h-full">
-          <div className="flex flex-col gap-2 h-full px-4 pt-8 border-l">
-            <h1 className="text-xl md:text-3xl font-bold">
+          <div className="flex flex-col gap-2 h-full px-4 pt-8 justify-center">
+            <h1 className="text-xl md:text-3xl font-bold flex justify-center mb-4">
               {id ? "Update User Profile" : "Create User Profile"}
             </h1>
             <form
