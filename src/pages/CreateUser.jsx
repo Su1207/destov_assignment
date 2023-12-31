@@ -87,9 +87,13 @@ const CreateUser = ({ user }) => {
 
   return (
     <div className="">
-      <div className="font-sans sm:flex md:items-center min-h-screen md:overflow-hidden">
+      <div className="font-sans sm:flex min-h-screen md:overflow-hidden">
         <div className="sm:flex-1 ">
-          <img src={User} alt="User" className="object-cover object-center" />
+          <img
+            src={User}
+            alt="User"
+            className="object-cover object-center h-screen w-full"
+          />
         </div>
         <div className="sm:flex-1 bg-white sm:h-screen h-full">
           <div className="flex flex-col gap-2 h-full px-4 pt-8 border-l">
@@ -98,7 +102,7 @@ const CreateUser = ({ user }) => {
             </h1>
             <form
               onSubmit={handleSubmit}
-              className="rounded-sm flex flex-col sm:block w-full"
+              className="rounded-sm flex flex-col sm:block"
             >
               <div>
                 <label className="text-xs md:text-sm font-medium mb-2 text-gray-500">
