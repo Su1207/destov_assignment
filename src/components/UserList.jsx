@@ -14,14 +14,14 @@ const UserList = ({ users, handleDelete }) => {
 
     return timestampB - timestampA;
   });
-
   return (
-    // const userId = user?.uid;
-
     <div className="grid grid-cols-4 gap-5 mx-auto mt-5 font-sans">
       {sortedUsers?.map((item) => (
         <div key={item.id}>
-          <div className="border border-slate-800 bg-white h-60 px-4 py-2 rounded-md shadow-lg transform transition-transform duration-300 hover:scale-110 flex-1 flex flex-col">
+          <div
+            className="h-60 px-4 py-2 bg-orange-400 rounded-md shadow-lg transform transition-transform duration-300 hover:scale-110 flex-1 flex flex-col"
+            // style={{ backgroundColor: "#FFA351" }}
+          >
             <div className="flex justify-start gap-4 items-center flex-1">
               <img
                 src={profile}
@@ -30,7 +30,7 @@ const UserList = ({ users, handleDelete }) => {
               />
               <div className="flex flex-col items-start">
                 <h2 className="text-lg font-semibold">{item.userName}</h2>
-                <p className="text-xs text-gray-400 font-semibold">
+                <p className="text-xs text-gray-800 font-bold">
                   {item.designation}
                 </p>
               </div>

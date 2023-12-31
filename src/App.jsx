@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import "./App.css";
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
@@ -45,14 +45,22 @@ function App() {
         theme="light"
       />
       <Routes>
-        <Route path="/" element={<Auth />} />
+        <Route path="/auth" element={<Auth />} />
         <Route
-          path="/home"
+          path="/"
           element={<Home user={user} handleLogout={handleLogout} />}
         />
         <Route
           path="/create"
-          element={user?.uid ? <CreateUser user={user} /> : navigate("/")}
+          element={
+            user?.uid ? <CreateUser user={user} /> : <Navigate to="/auth" />
+          }
+        />
+        <Route
+          path="/update/:id"
+          element={
+            user?.uid ? <CreateUser user={user} /> : <Navigate to="/auth" />
+          }
         />
       </Routes>
     </>

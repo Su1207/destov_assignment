@@ -7,6 +7,10 @@ import {
 import { auth } from "../Firebase";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import Login from "../assets/login-side-img.png";
+import { FaUserAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 const initialState = {
   firstName: "",
@@ -38,7 +42,7 @@ const Auth = () => {
             email,
             password
           );
-          navigate("/home");
+          navigate("/");
         } else {
           toast.error("All fields are mandatory to fill");
         }
@@ -54,7 +58,7 @@ const Auth = () => {
           await updateProfile(user, {
             displayName: `${firstName} ${lastName}`,
           });
-          navigate("/home");
+          navigate("/");
         } else {
           toast.error("All fields are mandatory to fill");
         }
@@ -67,114 +71,126 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex items-center w-full justify-center h-screen">
-      <div className="border border-black w-80 p-5 flex flex-col items-center justify-center rounded-sm shadow-md bg-white">
-        <div>
-          {signUp ? (
-            <h1 className="text-3xl mb-4 font-semibold text-gray-500">
-              Sign Up
-            </h1>
-          ) : (
-            <h1 className="text-3xl mb-4 font-semibold text-gray-500">
-              Log In
-            </h1>
-          )}
+    <div className="flex items-center w-full justify-center h-screen bg-slate-100">
+      <div className="max-w-full pr-5 rounded-sm shadow-lg bg-white flex justify-center items-center gap-8">
+        <div className="flex-1">
+          <img src={Login} alt="" className="h-full" />
         </div>
-        <form
-          className="flex flex-col items-center gap-2 min-w-full"
-          onSubmit={handleAuth}
-        >
-          {signUp && (
-            <div className="flex flex-col gap-2 w-full">
-              <input
-                type="text"
-                className="p-2 border rounded-sm w-full text-sm focus:outline-none"
-                placeholder="First Name"
-                name="firstName"
-                value={firstName}
-                onChange={handleChange}
-              />
-              <input
-                type="text"
-                className="p-2 border rounded-sm w-full focus:outline-none text-sm"
-                placeholder="Last Name"
-                name="lastName"
-                value={lastName}
-                onChange={handleChange}
-              />
-            </div>
-          )}
+        <div className="flex-1">
+          <div className="flex flex-col justify-center items-center">
+            {signUp ? (
+              <h1 className="text-3xl mb-8 font-bold">Sign Up</h1>
+            ) : (
+              <h1 className="text-3xl mb-8 font-bold">Log In</h1>
+            )}
+            <form
+              className="flex flex-col items-center gap-2 min-w-full"
+              onSubmit={handleAuth}
+            >
+              {signUp && (
+                <div className="flex flex-col gap-2 w-full">
+                  <div className="flex items-center relative">
+                    <FaUserAlt className="absolute text-gray-600" />
+                    <input
+                      type="text"
+                      className="p-2 pl-8 border-b rounded-sm w-full text-sm focus:outline-none"
+                      placeholder="First Name"
+                      name="firstName"
+                      value={firstName}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="flex items-center relative">
+                    <FaUserAlt className="absolute text-gray-600" />
+                    <input
+                      type="text"
+                      className="p-2 pl-8 border-b rounded-sm w-full focus:outline-none text-sm"
+                      placeholder="Last Name"
+                      name="lastName"
+                      value={lastName}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+              )}
 
-          <input
-            type="email"
-            className="p-2 border rounded-sm w-full text-sm focus:outline-none"
-            placeholder="Email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-          <input
-            type="password"
-            className="p-2 mb-1 border rounded-sm text-sm w-full focus:outline-none"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
+              <div className="flex items-center relative w-full">
+                <MdEmail className="absolute text-gray-600 text-lg" />
+                <input
+                  type="email"
+                  className="p-2 pl-8 border-b rounded-sm w-full text-sm focus:outline-none"
+                  placeholder="Email"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                />
+              </div>
 
-          {signUp && (
-            <input
-              type="password"
-              className="p-2 mb-1 border rounded-sm w-full text-sm focus:outline-none"
-              placeholder="Confirm Password"
-              name="confirmPassword"
-              value={confirmPassword}
-              onChange={handleChange}
-            />
-          )}
+              <div className="flex items-center relative w-full">
+                <RiLockPasswordFill className="absolute text-gray-600 text-lg" />
+                <input
+                  type="password"
+                  className="p-2 pl-8 mb-1 border-b rounded-sm text-sm w-full focus:outline-none"
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                />
+              </div>
 
-          <button
-            type="submit"
-            className="border rounded-md py-1 px-4 my-2 bg-blue-500 font-medium"
-          >
-            {!signUp ? "Log In" : "Sign Up"}
-          </button>
-        </form>
-        <div>
-          {!signUp ? (
-            <div className="">
-              <p className="text-xs">
-                Don't have an account ?&nbsp;
-                <span
-                  className="link-danger"
-                  style={{
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#298af2",
-                  }}
-                  onClick={() => setSignUp(true)}
-                >
-                  Sign Up
-                </span>
-              </p>
+              {signUp && (
+                <div className="flex items-center relative w-full">
+                  <RiLockPasswordFill className="absolute text-gray-600 text-lg" />
+                  <input
+                    type="password"
+                    className="p-2 pl-8 mb-1 border-b rounded-sm w-full text-sm focus:outline-none"
+                    placeholder="Confirm Password"
+                    name="confirmPassword"
+                    value={confirmPassword}
+                    onChange={handleChange}
+                  />
+                </div>
+              )}
+
+              <button
+                type="submit"
+                className={
+                  signUp
+                    ? `border rounded-md py-1 px-4 my-2 bg-blue-400 font-medium`
+                    : `border rounded-md py-1 px-4 my-2 bg-red-500 font-medium`
+                }
+              >
+                {!signUp ? "Log In" : "Sign Up"}
+              </button>
+            </form>
+            <div>
+              {!signUp ? (
+                <div className="">
+                  <p className="text-xs font-semibold text-gray-500">
+                    Don't have an account ?&nbsp;
+                    <span
+                      className="text-blue-400 cursor-pointer"
+                      onClick={() => setSignUp(true)}
+                    >
+                      Sign Up
+                    </span>
+                  </p>
+                </div>
+              ) : (
+                <div className="para-btn">
+                  <p className="text-xs font-semibold text-gray-500">
+                    Already have an account ?&nbsp;
+                    <span
+                      className="cursor-pointer decoration-none text-red-500"
+                      onClick={() => setSignUp(false)}
+                    >
+                      Sign In
+                    </span>
+                  </p>
+                </div>
+              )}
             </div>
-          ) : (
-            <div className="para-btn">
-              <p className="text-xs">
-                Already have an account ?&nbsp;
-                <span
-                  style={{
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#c43421",
-                  }}
-                  onClick={() => setSignUp(false)}
-                >
-                  Sign In
-                </span>
-              </p>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </div>

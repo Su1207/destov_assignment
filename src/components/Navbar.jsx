@@ -13,26 +13,26 @@ const Navbar = ({ user, handleLogout }) => {
           </h1>
         </div>
       ) : (
-        <h1 className="text-center mb-2">Null</h1>
+        <h1 className="text-center mb-2"></h1>
       )}
       <div className="flex gap-3 items-center justify-center">
         <Link
           to="/create"
-          className="border px-3 py-2 rounded-md bg-black text-white"
+          className=" px-3 py-2 rounded-md font-bold text-md hover:bg-black hover:text-white transition-all ease-in-out duration-300"
         >
-          Create User
+          Create
         </Link>
         {userId ? (
           <Link
-            className="border px-3 py-2 rounded-md bg-black text-white"
+            className=" px-3 py-2 rounded-md font-bold text-md hover:bg-black hover:text-white transition-all ease-in-out duration-300"
             onClick={handleLogout}
           >
             Logout
           </Link>
         ) : (
           <Link
-            className="border px-3 py-2 rounded-md bg-black text-white"
-            to="/"
+            className=" px-3 py-2 rounded-md font-bold text-md hover:bg-black hover:text-white transition-all ease-in-out duration-300"
+            to="/auth"
           >
             Login
           </Link>
