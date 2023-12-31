@@ -31,9 +31,9 @@ const Home = ({ user, handleLogout }) => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(users);
-  }, [users]);
+  //   useEffect(() => {
+  //     console.log(users);
+  //   }, [users]);
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure want to delete")) {
@@ -52,7 +52,7 @@ const Home = ({ user, handleLogout }) => {
     <div className="p-6">
       <Navbar user={user} handleLogout={handleLogout} />
 
-      <UserList users={users} handleDelete={handleDelete} />
+      <UserList users={users} user={user} handleDelete={handleDelete} />
     </div>
   );
 };

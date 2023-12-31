@@ -7,7 +7,7 @@ import { GiFlowerStar } from "react-icons/gi";
 import Gender from "./Gender";
 import { useNavigate } from "react-router-dom";
 
-const UserList = ({ users, handleDelete }) => {
+const UserList = ({ user, users, handleDelete }) => {
   // Sort users based on timestamp string
   const sortedUsers = users?.sort((a, b) => {
     const timestampA = a.timestamp.seconds;
@@ -55,16 +55,19 @@ const UserList = ({ users, handleDelete }) => {
               </div>
             </div>
             <div className="flex justify-between mt-5 flex-1 items-end">
-              <div className="flex items-center gap-1">
-                <BiEdit
-                  onClick={() => navigate(`/update/${item.id}`)}
-                  className="cursor-pointer"
-                />
-                <BiTrash
-                  onClick={() => handleDelete(item.id)}
-                  className="cursor-pointer"
-                />
-              </div>
+              {user && user.uid === item.userId && (
+                <div className="flex items-center gap-1">
+                  <BiEdit
+                    onClick={() => navigate(`/update/${item.id}`)}
+                    className="cursor-pointer"
+                  />
+                  <BiTrash
+                    onClick={() => handleDelete(item.id)}
+                    className="cursor-pointer"
+                  />
+                </div>
+              )}
+
               <div className="text-xs font-semibold flex items-center gap-1">
                 Created by <GiFlowerStar className="text-xs" />{" "}
                 <span>{item.admin}</span>
