@@ -86,17 +86,17 @@ const CreateUser = ({ user }) => {
   };
 
   return (
-    <div className="">
-      <div className="font-sans sm:flex min-h-screen md:overflow-hidden">
-        <div className="sm:flex-1 ">
+    <div className="h-screen">
+      <div className="font-sans sm:flex md:overflow-hidden h-full">
+        <div className="sm:flex-1">
           <img
             src={User}
             alt="User"
-            className="sm:h-screen w-full object-cover object-center"
+            className="sm:h-screen w-full object-cover object-center h-2/4"
           />
         </div>
-        <div className="sm:flex-1 bg-white sm:h-screen h-full">
-          <div className="flex flex-col gap-2 h-full px-4 pt-8 justify-center">
+        <div className="sm:flex-1 bg-white sm:h-screen h-3/5">
+          <div className="flex flex-col gap-2 h-full px-4 justify-center">
             <h1 className="text-xl md:text-3xl font-bold flex justify-center mb-4">
               {id ? "Update User Profile" : "Create User Profile"}
             </h1>
@@ -171,7 +171,7 @@ const CreateUser = ({ user }) => {
               </div>
               <button
                 type="submit"
-                className="bg-gray-800 py-1 px-5 mt-2 text-white rounded-md hover:bg-black mb-4 sm:pb-0"
+                className="bg-gray-800 py-1 px-5 mt-2 text-white rounded-md hover:bg-black sm:pb-0"
               >
                 {id ? "Update" : "Submit"}
               </button>
