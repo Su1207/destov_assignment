@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PiHandsPraying } from "react-icons/pi";
 
 const Navbar = ({ user, handleLogout }) => {
   const userId = user?.uid;
@@ -7,7 +8,12 @@ const Navbar = ({ user, handleLogout }) => {
     <div className="flex justify-between items-start">
       {userId ? (
         <div>
-          <h3 className="text-xl font-semibold">Welcome</h3>
+          <h3 className="text-xl font-semibold flex items-center gap-2">
+            Welcome{" "}
+            <span className="text-2xl">
+              <PiHandsPraying />
+            </span>
+          </h3>
           <h1 className="text-center mb-2 text-3xl font-bold">
             {user?.displayName}
           </h1>

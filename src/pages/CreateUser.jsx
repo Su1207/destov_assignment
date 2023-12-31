@@ -38,10 +38,12 @@ const CreateUser = ({ user }) => {
   };
 
   const getUserDetails = async () => {
-    const snapshot = await getDoc(doc(db, "users", id));
+    const docRef = doc(db, "users", id);
+    const snapshot = await getDoc(docRef);
     if (snapshot.exists()) {
-      setState(...snapshot.data());
+      setState({ ...snapshot.data() });
     }
+    // console.log(state);
   };
 
   useEffect(() => {
@@ -72,6 +74,7 @@ const CreateUser = ({ user }) => {
             admin: user.displayName,
             userId: user.uid,
           });
+          navigate("/");
           toast.success("Profile updated successfully");
         } catch (err) {
           console.log(err);
@@ -89,7 +92,9 @@ const CreateUser = ({ user }) => {
       </div>
       <div className="flex-1 bg-white h-screen">
         <div className="flex flex-col gap-5 h-full px-4 py-8 border-l">
-          <h1 className="text-3xl font-bold">Create User Profile</h1>
+          <h1 className="text-3xl font-bold">
+            {id ? "Update User Profile" : "Create User Profile"}
+          </h1>
           <form onSubmit={handleSubmit} className="rounded-sm">
             <div>
               <label className="text-sm font-medium mb-2 text-gray-500">
@@ -160,7 +165,7 @@ const CreateUser = ({ user }) => {
               type="submit"
               className="bg-gray-800 py-1 px-5 mt-2 text-white rounded-md hover:bg-black"
             >
-              Submit
+              {id ? "Update" : "Submit"}
             </button>
           </form>
         </div>

@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { BiEdit, BiTrash } from "react-icons/bi";
 import { GiFlowerStar } from "react-icons/gi";
 import Gender from "./Gender";
+import { useNavigate } from "react-router-dom";
 
 const UserList = ({ users, handleDelete }) => {
   // Sort users based on timestamp string
@@ -14,6 +15,9 @@ const UserList = ({ users, handleDelete }) => {
 
     return timestampB - timestampA;
   });
+
+  const navigate = useNavigate();
+
   return (
     <div className="grid grid-cols-4 gap-5 mx-auto mt-5 font-sans">
       {sortedUsers?.map((item) => (
@@ -52,7 +56,10 @@ const UserList = ({ users, handleDelete }) => {
             </div>
             <div className="flex justify-between mt-5 flex-1 items-end">
               <div className="flex items-center gap-1">
-                <BiEdit />
+                <BiEdit
+                  onClick={() => navigate(`/update/${item.id}`)}
+                  className="cursor-pointer"
+                />
                 <BiTrash
                   onClick={() => handleDelete(item.id)}
                   className="cursor-pointer"
