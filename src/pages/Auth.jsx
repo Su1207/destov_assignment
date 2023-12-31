@@ -73,7 +73,7 @@ const Auth = () => {
   return (
     <div className="flex items-center w-full sm:justify-center min-h-screen bg-slate-100">
       <div className="w-full min-h-screen sm:min-h-full  rounded-sm shadow-lg bg-white xl:flex lg:flex md:flex sm:flex sm:gap-8 sm:pr-5 justify-center items-center gap-4">
-        <div className="flex-1 mb-4">
+        <div className="flex-1 mb-10 sm:mb-0">
           <img src={Login} alt="" className="sm:h-full h-25 w-full" />
         </div>
         <div className="flex-1">
